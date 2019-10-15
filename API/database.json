@@ -1,0 +1,48 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "Paul",
+            "password": ""
+        },
+        {
+            "id": 2,
+            "email": "Rachel",
+            "password": ""
+        }
+    ],
+    "tacos": [
+        {
+            "id": 1,
+            "name": "chalupa",
+            "type": "veggie"
+        },
+        {
+            "id": 2,
+            "name": "fish taco",
+            "type": "seafood"
+        },
+        {
+            "id": 3,
+            "name": "burrito",
+            "type": "meat"
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "tacoId": 1,
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "tacoId": 2,
+            "userId": 2
+        },
+        {
+            "id": 3,
+            "tacoId": 3,
+            "userId": 3
+        }
+    ]
+}
