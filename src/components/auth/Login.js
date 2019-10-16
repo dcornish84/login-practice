@@ -24,12 +24,28 @@ class Login extends Component {
             the customer enters into local storage.
         */
         let credentials = { email: this.state.email, password: this.state.password }
-        APIManager.addUser(credentials)
+        APIManager.searchUsername(this.state.email)
             .then(result => {
-                console.log("result is", result)
+                console.log("what is the result of search", result)
+                if (result.length > 0) {
+                    this.props.setUser(result);
+                    this.props.history.push("/")
+                } else {
+                    APIManager.addUser(credentials)
+                        .then(result => {
+                            console.log("result is", result)
+                            this.props.setUser(result)
+                        })
+                    this.props.history.push("/")
+                }
             })
-        this.props.setUser(credentials);
-        this.props.history.push("/");
+
+        // APIManager.addUser(credentials)
+        //     .then(result => {
+        //         console.log("result is", result)
+        //     })
+        // this.props.setUser(credentials);
+        // this.props.history.push("/");
 
     }
 
